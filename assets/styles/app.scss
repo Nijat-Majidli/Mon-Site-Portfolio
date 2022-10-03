@@ -1,0 +1,65 @@
+// template base.html.twig
+body {
+    background-image: url("/public/images/home.jpg");
+    background-size: cover;
+
+    a {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        font-size: larger;
+    }
+    
+    li:hover a {
+        background-color: grey;
+        color: white;
+        font-size: x-large;
+    }
+
+    // template home > index.html.twig
+    .home {
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 22%;
+            border-radius: 20%;
+            animation: logo 12s linear 2s infinite alternate none;
+            -webkit-animation: logo 12s linear 2s infinite alternate none;
+        }
+
+        @keyframes logo {
+            0% {transform: rotateY(0deg) rotateX(0deg);}
+            25% {transform: rotateY(360deg) rotateX(0deg);}
+            50% {transform: rotateY(360deg) rotateX(360deg);}
+            100% {transform: rotateY(0deg) rotateX(0deg);}
+        }
+    }
+}
+    
+// template projects > index.html.twig
+.projects {
+    background-image: url("/public/images/projects.jpg");
+    background-size: cover;
+
+    img {
+        position: absolute;
+        top: 3%;
+        left: 30%;
+        width: 100px;
+        border-radius: 20%;
+        animation: logo 12s linear 2s infinite alternate none;
+        -webkit-animation: logo 12s linear 2s infinite alternate none;
+    }
+
+    @keyframes logo {
+        0% {transform: rotateY(0deg) rotateX(0deg);}
+        25% {transform: rotateY(360deg) rotateX(0deg);}
+        50% {transform: rotateY(360deg) rotateX(360deg);}
+        100% {transform: rotateY(0deg) rotateX(0deg);}
+    }
+}
+
+
+
+
+
+
