@@ -11,36 +11,115 @@ body {
     
     li:hover a {
         background-color: grey;
+        border-radius: 20px;
         color: white;
         font-size: x-large;
-    }
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+}
 
     // template home > index.html.twig
-    .home {
+    .home 
+    {
         img {
             max-width: 100%;
             height: auto;
             margin-top: 22%;
             border-radius: 20%;
-            animation: logo 12s linear 2s infinite alternate none;
-            -webkit-animation: logo 12s linear 2s infinite alternate none;
+            animation: Logo 12s linear 2s infinite alternate none;
+            -webkit-animation: Logo 12s linear 2s infinite alternate none;
         }
 
-        @keyframes logo {
+        @keyframes Logo {
             0% {transform: rotateY(0deg) rotateX(0deg);}
             25% {transform: rotateY(360deg) rotateX(0deg);}
             50% {transform: rotateY(360deg) rotateX(360deg);}
             100% {transform: rotateY(0deg) rotateX(0deg);}
         }
+        
+        .hello
+        {
+            margin-top: 15%;
+            position: relative;
+            perspective: 100px;
+
+            .welcomeMessage 
+            {
+                font-family: fantasy;
+                font-size: xx-large;
+                color: blue;
+                position: absolute;
+                transform-style: preserve-3d;
+                transform: rotateX(5deg);
+                -webkit-transform: rotateX(5deg);
+                -moz-transform: rotateX(5deg);
+                -ms-transform: rotateX(5deg);
+                -o-transform: rotateX(5deg);
+                    
+                .message1 
+                {
+                    position: relative;
+                    animation: Message1 2s linear 0s 1 normal none;
+                    -webkit-animation: Message1 2s linear 0s 1 normal none;
+                    text-shadow: 1px 1px 1px #051646,
+                        1px 2px 1px #051646,
+                        1px 3px 1px #051646,
+                        1px 4px 1px #051646,
+                        1px 5px 1px #051646,
+                    1px 18px 6px rgba(16,16,16,0.4),
+                    1px 22px 10px rgba(16,16,16,0.2),
+                    1px 25px 35px rgba(16,16,16,0.2),
+                    1px 30px 60px rgba(16,16,16,0.4);
+                }
+
+                @keyframes Message1 {
+                    0% {opacity:0; right:200px;}
+                    25% {opacity:0.25; right:150px;}
+                    50% {opacity:0.5; right:100px;}
+                    75% {opacity:0.75; right:50px;}
+                    100% {opacity:1; right:0px;}
+                }
+                
+                .message2 
+                {
+                    position: relative;;
+                    animation: Message2 2s linear 0s 1 normal none;
+                    -webkit-animation: Message2 2s linear 0s 1 normal none;
+                    text-shadow: 1px 1px 1px #051646,
+                        1px 2px 1px #051646,
+                        1px 3px 1px #051646,
+                        1px 4px 1px #051646,
+                        1px 5px 1px #051646,
+                    1px 18px 6px rgba(16,16,16,0.4),
+                    1px 22px 10px rgba(16,16,16,0.2),
+                    1px 25px 35px rgba(16,16,16,0.2),
+                    1px 30px 60px rgba(16,16,16,0.4);
+                }
+                
+                @keyframes Message2 {
+                    0% {opacity:0; left:200px;}
+                    25% {opacity:0.25; left:150px;}
+                    50% {opacity:0.5; left:100px;}
+                    75% {opacity:0.75; left:50px;}
+                    100% {opacity:1; left:0px;}
+                }
+            }
+        }
     }
+     
 }
-    
+
+
 // template projects > index.html.twig
-.projects {
+.projects 
+{
     background-image: url("/public/images/projects.jpg");
     background-size: cover;
 
-    img {
+    .logo 
+    {
         position: absolute;
         top: 3%;
         left: 30%;
@@ -50,11 +129,33 @@ body {
         -webkit-animation: logo 12s linear 2s infinite alternate none;
     }
 
-    @keyframes logo {
+    @keyframes logo 
+    {
         0% {transform: rotateY(0deg) rotateX(0deg);}
         25% {transform: rotateY(360deg) rotateX(0deg);}
         50% {transform: rotateY(360deg) rotateX(360deg);}
         100% {transform: rotateY(0deg) rotateX(0deg);}
+    }
+
+    .projectName
+    {
+        text-align: center;
+        font-family: cursive;
+        color:blueviolet
+    }
+
+    .description, .describe 
+    {
+        visibility: hidden;
+        font-size: medium;
+        position: absolute;
+        margin-left: 10px;
+    }
+
+    .projectLink
+    {
+        font-family: cursive;
+        font-size:medium;
     }
 }
 

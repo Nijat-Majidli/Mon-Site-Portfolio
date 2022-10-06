@@ -6,10 +6,89 @@
 
 {% block body %}
     <body class="projects">
-        <div>
-            <img src="/images/logo.png" alt="logo">
-        </div>
+        <div class="container-fluid">
+            <div>
+                <img src="{{ asset('/images/logo.png') }}" class="logo" alt="logo">
+            </div>
+            <div class="row">
+                <h2 class="col-8 text-center my-5"> My projects </h2>
+            </div>
+            <div class="row ml-5">
+                {% for project in allProjects %}
+                    <div class="col-3 ml-5">
+                        <h5 class="projectName"> <span>{{ project.name }}</span> </h5>
+                        <div> <img src="/images/{{project.photo}}" alt="photoProjet"> </div>
+                        <p> 
+                            <b>Description:</b> 
+                            <span class="projectDescription" id="projectDescription{{project.id}}">{{ project.description }}</span> 
+                            
+                            <span class="description"> 
+                                <a href='#' class='{{project.id}}' id='readNext{{project.id}}'> Suite... </a>
+                            </span>
+                            <span class="describe">
+                                <a href='#' class='{{project.id}}' id='reduceText{{project.id}}'> Réduire </a>
+                            </span>
+                        </p>
+                        <p> <b>Téchnologies utilisées:</b> {{ project.technologies }} </p>
+                        <p> 
+                            <b>Lien:</b> <a href="{{ project.link }}" class="projectLink"> <span>{{ project.link }}</span> </a>
+                        </p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>    
     </body>
 {% endblock %}
 
-{% block javascripts %} {% endblock %}
+{% block javascripts %} 
+    <script>
+        $(document).ready(function()
+        {
+            let description =  document.getElementsByClassName("projectDescription"); 
+            let allDescriptions = [];
+
+            $.each(description, function(key, value) 
+            {   
+                allDescriptions[key]=value.innerText;
+
+                let text = value.innerText ;
+                let length = text.length;
+                let shortText = text.slice(0, 150);
+                
+                $("#projectDescription"+(key+1)).html(shortText);
+                $("#readNext"+(key+1)).css({"visibility":"visible", "position":"relative"});
+                
+            });
+
+            $(".description a").click(function()
+            {
+                $("#"+event.target.id).css({"visibility":"hidden", "position":"absolute"});
+                $("#reduceText"+event.target.className).css({"visibility":"visible", "position":"relative"});
+
+                for(desc in allDescriptions)
+                {
+                    if((parseInt(desc)+1)==event.target.className)
+                    {
+                        $("#projectDescription"+event.target.className).html(allDescriptions[desc]);
+                    }
+                }
+            });
+          
+            $(".describe a").click(function()
+            {
+                $("#"+event.target.id).css({"visibility":"hidden", "position":"absolute"});
+                $("#readNext"+event.target.className).css({"visibility":"visible", "position":"relative"});
+                
+                for(desc in allDescriptions)
+                {
+                    if((parseInt(desc)+1)==event.target.className)
+                    {
+                        let text = allDescriptions[desc];
+                        let shortText = text.slice(0, 150);
+                        $("#projectDescription"+event.target.className).html(shortText);
+                    }
+                }                
+            }); 
+        })
+    </script>
+{% endblock %}
