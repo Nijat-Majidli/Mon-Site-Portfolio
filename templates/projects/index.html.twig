@@ -2,16 +2,11 @@
 
 {% block title %}Projets{% endblock %}
 
-{% block stylesheets %} {% endblock %}
-
 {% block body %}
     <body class="projects">
         <div class="container-fluid">
-            <div>
-                <img src="{{ asset('/images/logo.png') }}" class="logo" alt="logo">
-            </div>
-            <div class="row">
-                <h2 class="col-8 text-center my-5"> My projects </h2>
+            <div class="typewriter">
+                <h2> My projects : </h2>
             </div>
             <div class="row ml-5">
                 {% for project in allProjects %}

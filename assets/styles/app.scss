@@ -1,79 +1,158 @@
+body, html {
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
 // template base.html.twig
 body {
     background-image: url("/public/images/home.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 
-    a {
-        font-family: 'Courier New', Courier, monospace;
-        font-weight: bold;
-        font-size: larger;
-    }
-    
-    li:hover a {
-        background-color: grey;
-        border-radius: 20px;
-        color: white;
-        font-size: x-large;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-}
-
-    // template home > index.html.twig
-    .home 
+    .nav-bar 
     {
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 22%;
-            border-radius: 20%;
-            animation: Logo 12s linear 2s infinite alternate none;
-            -webkit-animation: Logo 12s linear 2s infinite alternate none;
-        }
-
-        @keyframes Logo {
-            0% {transform: rotateY(0deg) rotateX(0deg);}
-            25% {transform: rotateY(360deg) rotateX(0deg);}
-            50% {transform: rotateY(360deg) rotateX(360deg);}
-            100% {transform: rotateY(0deg) rotateX(0deg);}
+        ul {
+            li {
+                .smallLogo {
+                    max-width: 40%;
+                    height: auto;
+                    border-radius: 20%;
+                    animation: smallLogo 12s linear 2s infinite alternate none;
+                    -webkit-animation: smallLogo 12s linear 2s infinite alternate none;
+                }
+                
+                @keyframes smallLogo {
+                    0% {transform: rotateY(0deg) rotateX(0deg);}
+                    25% {transform: rotateY(360deg) rotateX(0deg);}
+                    50% {transform: rotateY(360deg) rotateX(360deg);}
+                    100% {transform: rotateY(0deg) rotateX(0deg);}
+                }
+            }
         }
         
-        .hello
-        {
-            margin-top: 15%;
-            position: relative;
-            perspective: 100px;
+        #menuHamburger {
+            position: absolute;
+            color: blue;
+            top: 0%;
+            visibility: hidden;
 
-            .welcomeMessage 
-            {
+            i {
+                font-size: 48px;
+            }
+        }
+
+        #menuHamburger:hover {
+            cursor: pointer;
+        }
+    
+
+        a {
+            font-family: Silkscreen;
+            font-weight: bold;
+            font-size: larger;
+        }
+        
+        li:hover a {
+            background-color: grey;
+            border-radius: 20px;
+            color: white;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            -ms-border-radius: 20px;
+            -o-border-radius: 20px;
+        }
+    }    
+
+    // template home > index.html.twig
+    .home {
+        position: relative;
+        top: 20%;
+        padding-left: 2%;
+
+        .doors{
+            position: relative;
+            display: grid;
+            grid-template-columns: auto auto;
+            width: 25%;
+            margin-left: 25%;
+            background-image: url("/public/images/road.jpeg");
+            background-size: cover;
+            
+            .door {
+                width: 100%;
+                height: auto;
+                border: 1px solid gray;
+                box-shadow: 10px 10px 8px 0 rgba(0, 0, 0, 0.4);
+            }
+
+            .door1 {
+                animation: door1 5s linear 1 normal forwards;
+                -webkit-animation: door1 5s linear 1 normal forwards;
+            }
+            
+            @keyframes door1 {
+                from { transform: perspective(500px) rotateY(0deg); transform-origin: 0% 0%; -webkit-transform: perspective(500px) rotateY(0deg); -moz-transform: perspective(500px) rotateY(0deg); -ms-transform: perspective(500px) rotateY(0deg); -o-transform: perspective(500px) rotateY(0deg); }
+                to { transform: perspective(500px) rotateY(-170deg); transform-origin: 0% 0%; -webkit-transform: perspective(500px) rotateY(-170deg); -moz-transform: perspective(500px) rotateY(-170deg); -ms-transform: perspective(500px) rotateY(-170deg); -o-transform: perspective(500px) rotateY(-170deg); }
+            }
+
+            .door2 {
+                animation: door2 5s linear 1 normal forwards;
+                -webkit-animation: door2 5s linear 1 normal forwards;
+            }
+     
+            @keyframes door2 {
+                 from { transform: perspective(500px) rotateY(0deg); transform-origin: 100% 0%; -webkit-transform: perspective(500px) rotateY(0deg); -moz-transform: perspective(500px) rotateY(0deg); -ms-transform: perspective(500px) rotateY(0deg); -o-transform: perspective(500px) rotateY(0deg); }
+                 to { transform: perspective(500px) rotateY(170deg); transform-origin: 100% 0%; -webkit-transform: perspective(500px) rotateY(170deg); -moz-transform: perspective(500px) rotateY(170deg); -ms-transform: perspective(500px) rotateY(170deg); -o-transform: perspective(500px) rotateY(170deg); }
+            }
+
+            .myphoto {
+                position: absolute;
+                max-width: 40%;
+                height: auto;
+                opacity: 0;
+                animation: myphoto 3s linear 6s forwards;
+                -webkit-animation: myphoto 3s linear 6s forwards;
+            }
+
+            @keyframes myphoto {
+                0% {opacity:0;}
+                25% {opacity:0.25;}
+                50% {opacity:0.5;}
+                75% {opacity:0.75;}
+                100% {opacity:1;}
+            }
+
+            .welcomeMessage {
+                display: inline-block;
                 font-family: fantasy;
-                font-size: xx-large;
+                font-size: 2vw;
                 color: blue;
                 position: absolute;
-                transform-style: preserve-3d;
-                transform: rotateX(5deg);
-                -webkit-transform: rotateX(5deg);
-                -moz-transform: rotateX(5deg);
-                -ms-transform: rotateX(5deg);
-                -o-transform: rotateX(5deg);
-                    
-                .message1 
-                {
+                bottom: 52%;
+                left: 8%;
+                transform: rotateX(25deg);
+                -webkit-transform: rotateX(25deg);
+                -moz-transform: rotateX(25deg);
+                -ms-transform: rotateX(25deg);
+                -o-transform: rotateX(25deg);
+                
+                .message1 {
+                    opacity: 0;
                     position: relative;
-                    animation: Message1 2s linear 0s 1 normal none;
-                    -webkit-animation: Message1 2s linear 0s 1 normal none;
+                    animation: Message1 2s linear 10s 1 forwards;
+                    -webkit-animation: Message1 2s linear 10s 1 forwards;
                     text-shadow: 1px 1px 1px #051646,
-                        1px 2px 1px #051646,
-                        1px 3px 1px #051646,
-                        1px 4px 1px #051646,
-                        1px 5px 1px #051646,
-                    1px 18px 6px rgba(16,16,16,0.4),
-                    1px 22px 10px rgba(16,16,16,0.2),
-                    1px 25px 35px rgba(16,16,16,0.2),
-                    1px 30px 60px rgba(16,16,16,0.4);
+                                1px 2px 1px #051646,
+                                1px 3px 1px #051646,
+                                1px 4px 1px #051646,
+                                1px 5px 1px #051646,
+                        1px 18px 6px rgba(16,16,16,0.4),
+                        1px 22px 10px rgba(16,16,16,0.2),
+                        1px 25px 35px rgba(16,16,16,0.2),
+                        1px 30px 60px rgba(16,16,16,0.4);
                 }
-
+    
                 @keyframes Message1 {
                     0% {opacity:0; right:200px;}
                     25% {opacity:0.25; right:150px;}
@@ -82,20 +161,20 @@ body {
                     100% {opacity:1; right:0px;}
                 }
                 
-                .message2 
-                {
-                    position: relative;;
-                    animation: Message2 2s linear 0s 1 normal none;
-                    -webkit-animation: Message2 2s linear 0s 1 normal none;
+                .message2 {
+                    opacity: 0;
+                    position: relative;
+                    animation: Message2 2s linear 10s 1 forwards;
+                    -webkit-animation: Message2 2s linear 10s 1 forwards;
                     text-shadow: 1px 1px 1px #051646,
-                        1px 2px 1px #051646,
-                        1px 3px 1px #051646,
-                        1px 4px 1px #051646,
-                        1px 5px 1px #051646,
-                    1px 18px 6px rgba(16,16,16,0.4),
-                    1px 22px 10px rgba(16,16,16,0.2),
-                    1px 25px 35px rgba(16,16,16,0.2),
-                    1px 30px 60px rgba(16,16,16,0.4);
+                                1px 2px 1px #051646,
+                                1px 3px 1px #051646,
+                                1px 4px 1px #051646,
+                                1px 5px 1px #051646,
+                        1px 18px 6px rgba(16,16,16,0.4),
+                        1px 22px 10px rgba(16,16,16,0.2),
+                        1px 25px 35px rgba(16,16,16,0.2),
+                        1px 30px 60px rgba(16,16,16,0.4);
                 }
                 
                 @keyframes Message2 {
@@ -106,56 +185,311 @@ body {
                     100% {opacity:1; left:0px;}
                 }
             }
+        }  
+
+        .icons {
+            position: absolute;
+            bottom: 10%;
+
+            .fab {
+                font-size: 5vh;
+                margin-top: 2vh;
+            }
+
+            .fa-linkedin {
+                color: rgb(10, 102, 194);
+            }
+            
+        }
+    }  
+}
+
+// template home -> about.html.twig
+.about {
+    background-image: url("/public/images/about.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .myPhoto {
+        margin-top: 8%;
+        margin-left: 35%;
+    }
+
+    .typewriting {
+        margin: 1% 0 0 35%;
+
+        .aboutMe-1, .aboutMe-2, .aboutMe-3 {
+            font-family: Audiowide;
+            color: white;
+            overflow: hidden;
+            border-right: .15em solid transparent;
+            white-space: nowrap;
+            padding: auto 0;
+            letter-spacing: .15em;
+            visibility: hidden;
+        }
+
+        .aboutMe-1 {
+            animation: type 4s steps(30, end) forwards, blinking .5s 10 backwards;
+            -webkit-animation: type 4s steps(30, end) forwards, blinking .5s 10 backwards;
+        }
+
+        .aboutMe-2 {
+            animation: type 4s steps(30, end) 5s forwards, blinking .5s 20 backwards;
+            -webkit-animation: type 4s steps(30, end) 5s forwards, blinking .5s 20 backwards;
+        }
+
+        .aboutMe-3 {
+            animation: type 3s steps(30, end) 10s forwards, blinking .5s 27 backwards;
+            -webkit-animation: type 3s steps(30, end) 10s forwards, blinking .5s 27 backwards;
+}
+        
+        button {
+            font-family: Audiowide;
+            color: white;
+            visibility: hidden;
+            animation: type 3s steps(30, end) 14s forwards;
+            -webkit-animation: type 3s steps(30, end) 14s forwards;
+        }
+
+        /* The typing effect */
+        @keyframes type {
+            from {width:0; visibility: hidden;}
+            to {width: 40%; visibility: visible;}
+        }
+        
+        /* The typewriter cursor effect */
+        @keyframes blinking {
+            from {border-color: transparent;}
+            50% {border-color: orange;}
+            to {border-color: transparent;}
         }
     }
-     
-}
+}     
 
 
 // template projects > index.html.twig
-.projects 
-{
+.projects {
     background-image: url("/public/images/projects.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 
-    .logo 
-    {
-        position: absolute;
-        top: 3%;
-        left: 30%;
-        width: 100px;
-        border-radius: 20%;
-        animation: logo 12s linear 2s infinite alternate none;
-        -webkit-animation: logo 12s linear 2s infinite alternate none;
+    .typewriter {
+        display: flex;
+        justify-content: flex-start;
+
+        h2 {
+            font-family: Audiowide;
+            color: blue;
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            margin: 5% 0 3% 25%;
+            padding: auto 0;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
+            -webkit-animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
+        }
+    
+        /* The typing effect */
+        @keyframes typing {
+            from {width:0%;}
+            to {width: 15%;}
+        }
+        
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from {border-color: transparent;}
+            50% {border-color: black;}
+            to {border-color: transparent;}
+        }
     }
-
-    @keyframes logo 
-    {
-        0% {transform: rotateY(0deg) rotateX(0deg);}
-        25% {transform: rotateY(360deg) rotateX(0deg);}
-        50% {transform: rotateY(360deg) rotateX(360deg);}
-        100% {transform: rotateY(0deg) rotateX(0deg);}
-    }
-
-    .projectName
-    {
+      
+    .projectName {
         text-align: center;
         font-family: cursive;
         color:blueviolet
     }
 
-    .description, .describe 
-    {
+    .description, .describe {
         visibility: hidden;
         font-size: medium;
         position: absolute;
         margin-left: 10px;
     }
 
-    .projectLink
-    {
+    .projectLink {
         font-family: cursive;
         font-size:medium;
+    }
+}
+
+
+
+
+// RESPONSIVE DESIGN
+@media only screen and (max-width: 1395px) {
+    body {
+        background-image: url("/public/images/home1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .nav-bar {
+            ul {
+                a {
+                    color: white;
+                }
+            }
+        }
+
+        .home {
+            .icons {
+                .fa-linkedin {
+                    color: white;
+                    background-color: rgb(10, 102, 194);
+                }
+                .fa-github {
+                    color: white;
+                }
+            }
+
+            .hello {
+                .welcomeMessage {
+                    color: white;
+
+                    .message1, .message2 {
+                        text-shadow: 0 1px 0 #ccc, 
+                                    0 2px 0 #c9c9c9,
+                                    0 3px 0 #bbb,
+                                    0 4px 0 #b9b9b9,
+                                    0 5px 0 #aaa,
+                                0 6px 1px rgba(0,0,0,.1),
+                                0 0 5px rgba(0,0,0,.1),
+                                0 1px 3px rgba(0,0,0,.3),
+                                0 3px 5px rgba(0,0,0,.2),
+                                0 5px 10px rgba(0,0,0,.25),
+                                0 10px 10px rgba(0,0,0,.2),
+                                0 20px 20px rgba(0,0,0,.15);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    body {
+        background-image: url("/public/images/home2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .nav-bar {
+            ul {
+                a {
+                    color: blue;
+                }
+            }
+        }
+
+        .home {
+            .icons {
+                .fa-linkedin {
+                    color: rgb(10, 102, 194);
+                    background-color: transparent;
+                }
+                .fa-github {
+                    color: black;
+                }
+            }
+
+            .hello {
+                .welcomeMessage {
+                    color: blue;
+
+                    .message1, .message2 {
+                        text-shadow: 1px 1px 1px #051646,
+                            1px 2px 1px #051646,
+                            1px 3px 1px #051646,
+                            1px 4px 1px #051646,
+                            1px 5px 1px #051646,
+                        1px 18px 6px rgba(16,16,16,0.4),
+                        1px 22px 10px rgba(16,16,16,0.2),
+                        1px 25px 35px rgba(16,16,16,0.2),
+                        1px 30px 60px rgba(16,16,16,0.4);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    body {
+        .nav-bar {
+            #navMenu {
+                display: block;
+                visibility: hidden;
+            }
+
+            #menuHamburger {
+                visibility: visible;
+            }
+        }
+
+        .home {
+            .logo {
+                margin-top: 5vh;
+            }
+
+            .hello {
+                .welcomeMessage {
+                    
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 465px) {
+    body {
+        background-image: url("/public/images/home3.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .nav-bar {
+            ul {
+                a {
+                    color: white;
+                }
+            }
+
+            #menuHamburger {
+                color: white;
+            }
+        }
+
+        .home {
+            .hello {
+                .welcomeMessage {
+                    color: white;
+
+                    .message1, .message2 {
+                        text-shadow: 0 1px 0 #ccc, 
+                                    0 2px 0 #c9c9c9,
+                                    0 3px 0 #bbb,
+                                    0 4px 0 #b9b9b9,
+                                    0 5px 0 #aaa,
+                                0 6px 1px rgba(0,0,0,.1),
+                                0 0 5px rgba(0,0,0,.1),
+                                0 1px 3px rgba(0,0,0,.3),
+                                0 3px 5px rgba(0,0,0,.2),
+                                0 5px 10px rgba(0,0,0,.25),
+                                0 10px 10px rgba(0,0,0,.2),
+                                0 20px 20px rgba(0,0,0,.15);
+                    }
+                }
+            }
+        }
     }
 }
 

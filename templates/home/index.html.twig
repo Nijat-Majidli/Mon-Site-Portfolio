@@ -1,22 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
-
-{% block stylesheets %} {% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <div class="row home d-flex justify-content-center">
-            <div class="col-7">
-                <img src="{{ asset('images/logo.png') }}" alt="logo">
-            </div>
-            <div class="col-7 hello">
+   
+        <div class="home">
+
+            <div class="doors">
+                <img src="{{ asset('images/nijat.png') }}" alt="myphoto" class="myphoto">
+                <img src="{{ asset('images/door1.jpg') }}" alt="door1" class="door1 door"> 
+                <img src="{{ asset('images/door2.jpg') }}" alt="door2" class="door2 door"> 
+
                 <div class="welcomeMessage">
                     <span class="message1">Welcome to</span> <span class="message2">My page</span>
                 </div>
             </div>
-        </div>
-    </div>
-{% endblock %}
 
-{% block javascripts %} {% endblock %}
+            <div class="icons">
+                <div><i class='fab fa-linkedin'></i></div>
+                <div><i class='fab fa-github'></i></div>
+            </div>
+            
+        </div>
+    
+{% endblock %}

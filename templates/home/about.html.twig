@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}About me{% endblock %}
+
+{% block body %}
+    <body class="about">
+        <div class="container-fluid">
+            <div >
+                <img src="{{ asset('/images/nijat.png') }}" width="7%" height="7%" class="myPhoto" alt="myphoto"> 
+            </div>
+             <div class="typewriting">
+                <h6 class="aboutMe-1"> Hi, my name is Nijat. I am a web developper. </h6>
+                <h6 class="aboutMe-2"> Do you want to know more about me ? </h6>
+                <h6 class="aboutMe-3"> Please download my CV below : </h6>
+                <a href="/mydocs/CV.pdf" target="_blank"> <button class="btn btn-info mt-3"> Download </button> </a> 
+            </div>
+        </div>
+    </body>
+{% endblock %}

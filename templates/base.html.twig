@@ -8,19 +8,38 @@
         
         {# Bootstrap4 CSS #}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        {# Google Fonts #}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Silkscreen|Nabla">
+
+        {# Google icons #}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        {# jQuery Google CDN #}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        {# Font Awesome #}
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
         
-        {# CSS file #}
-        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
-        
-        {% block stylesheets %} {% endblock %}
+        {% block stylesheets %}
+            {# 'app' must match the first argument to addEntry() in webpack.config.js #}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </head>
 
     <body>
         <div class="container">
             {# Page Header #}
-            <header class="my-5">
-                <nav>
-                    <ul class="nav justify-content-center">
+            <header class="mt-5">
+                <nav class="nav-bar">
+                    <ul class="nav justify-content-left" id="navMenu">
+                        <li class="nav-item text-center">
+                            <img src="{{ asset('/images/logo.png') }}" class="smallLogo" alt="logo">
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ path('homePage') }}">Home</a>
                         </li>
@@ -28,29 +47,29 @@
                             <a class="nav-link" href="{{ path('app_projects') }}">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About Me</a>
+                            <a class="nav-link" href="{{ path('aboutMe') }}">About Me</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                     </ul>
+                    {# Hamburger Menu icon #}
+                    <div id="menuHamburger"><i class="material-icons">menu</i></div>
                 </nav>
             </header>
         </div>
-
+        
         {# Page Body #}
         {% block body %} {% endblock %}
 
         {# Page Footer #}
         <footer>
         </footer>
-        
 
         {# Bootstrap - jQuery, Popper.js and JavaScript #}
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
-        {% block javascripts %} {% endblock %}
     </body>
 </html>

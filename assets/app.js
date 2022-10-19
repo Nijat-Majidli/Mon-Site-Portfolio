@@ -10,3 +10,24 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+
+
+
+// Les codes Menu Hamburger de navbar
+let menuHamburger = document.getElementById("#menuHamburger");
+
+menuHamburger.click = addEventListener("click", Show); 
+
+function Show(){
+    let element = document.querySelector('#navMenu');
+
+    if(element.style.visibility=='hidden')
+    {
+        element.style.visibility='visible';
+    }
+    else
+    {
+        element.style.visibility='hidden';
+    }
+}
+
