@@ -32,24 +32,24 @@
     </head>
 
     <body>
-        <div class="container">
+        <div>
             {# Page Header #}
-            <header class="mt-5">
+            <header class="pt-3">
                 <nav class="nav-bar">
-                    <ul class="nav justify-content-left" id="navMenu">
-                        <li class="nav-item text-center">
+                    <ul class="nav" id="navMenu">
+                        <li class="nav-item">
                             <img src="{{ asset('/images/logo.png') }}" class="smallLogo" alt="logo">
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item item">
                             <a class="nav-link active" href="{{ path('homePage') }}">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item item">
                             <a class="nav-link" href="{{ path('app_projects') }}">Projects</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('aboutMe') }}">About Me</a>
+                        <li class="nav-item item">
+                            <a class="nav-link" href="{{ path('aboutMe') }}">About</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item item">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                     </ul>

@@ -1,0 +1,535 @@
+// RESPONSIVE DESIGN
+@media only screen and (max-width: 1600px) 
+{
+    body 
+    {
+        // template projects > index.html.twig
+        .pageProjects {
+            .typewriter {
+                width: 55%;
+                margin-left: 8%;
+                margin-bottom: 2%;
+            }
+
+            .carousel {
+                width: 55%;
+                margin-left: 8%;
+
+                .projects {
+                    font-size: 1.2vw;
+                }
+            }
+        }
+    }  
+
+    // template home -> about.html.twig
+    .about 
+    {
+        .aboutMe {
+            top: 6%;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1400px) 
+{
+    body 
+    {
+        background-image: url("/public/images/home1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .icons {
+            .fab {
+                color: white;
+            }
+            .fa-linkedin {
+                background-color: rgb(10, 102, 194);
+            }
+        }
+
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                li {
+                    a {
+                        color: white;
+                        font-size: 1.7vw;
+                    }
+                }
+            }
+        }
+
+        // template home > index.html.twig
+        .home {
+            top: 20%;
+            
+            .doors {
+                width: 30%;
+                margin-left: 35%;
+                background-image: url("/public/images/eiffel.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                .welcomeMessage {
+                    bottom: 20%;
+                    color: cadetblue;
+                }
+            }
+        }
+
+        // template projects > index.html.twig
+        .pageProjects {
+            .typewriter {
+                width: 65%;
+
+                h4 {
+                    font-size: 2vw;
+                    color: white;
+                }
+            }
+
+            .carousel {
+                width: 65%;
+
+                .carousel-indicators {
+                    filter: invert(0%);
+                    -webkit-filter: invert(0%);
+                }
+
+                .projects {
+                    color: white;
+                    font-size: 1.5vw;
+
+                    .project {
+                        .projectName {
+                            color: white;
+                        }
+                    }    
+                }
+            }
+        }
+    }
+
+    // template home -> about.html.twig
+    .about 
+    {
+        background-color: #5d653c;
+        
+        .aboutMe {
+            top: 30%;
+
+            .Me {
+                margin-left: 31%;
+
+                .myPhoto { 
+                    img {
+                        width: 100px;
+                    }
+
+                    .overlay {
+                        background-color: white;
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }    
+}
+
+
+@media only screen and (max-width: 1200px) 
+{
+    body 
+    {
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                li {
+                    a {
+                        font-size: 2vw;
+                    }
+                }
+            }
+        }
+        
+        // template projects > index.html.twig
+        .pageProjects {
+            .typewriter {
+                width: 75%;
+
+                h4 {
+                    font-size: 2.3vw;
+                }
+            }
+
+            .carousel {
+                width: 75%;
+
+                
+                .projects {
+                    font-size: 1.8vw;
+                }
+            }
+        }
+    }  
+
+    // template home -> about.html.twig
+    .about 
+    {
+        .aboutMe {
+            top: 25%;
+        }
+    }    
+}
+
+
+@media only screen and (max-width: 1000px) 
+{
+    body 
+    {
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                li {
+                    a {
+                        font-size: 2.5vw;
+                    }
+                }
+            }
+        }
+
+        // template home > index.html.twig
+        .home {
+            .doors {
+                width: 40%;
+                
+                .welcomeMessage {
+                    font-size: 3vw;
+                }
+            }
+        }
+
+        // template projects > index.html.twig
+        .pageProjects {
+            .typewriter {
+                width: 85%;
+                margin-bottom: 3%;
+
+                h4 {
+                    font-size: 2.5vw;
+                }
+            }
+
+            .carousel {
+                width: 85%;
+
+                .projects {
+                    font-size: 2vw;
+                    
+                    .project {
+                        .projectName {
+                            font-size: 2.5vw;
+                        }
+                    }    
+                }
+            }
+        }
+    }
+
+   // template home -> about.html.twig
+   .about 
+   {
+       .aboutMe {
+           top: 20%;
+       }
+   }    
+}
+
+
+@media only screen and (max-width: 900px) 
+{
+     // template home -> about.html.twig
+   .about 
+   {
+       .aboutMe {
+           top: 15%;
+       }
+   }    
+}
+
+
+@media only screen and (max-width: 800px) 
+{
+    body 
+    {
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                display: block;
+                margin-top: 5%;
+                
+                li:not(:first-child) {
+                    width: 30%;
+                    visibility: hidden;
+                }
+
+                li:first-child {
+                    position: absolute;
+                    left: 70%;
+                    top: 2%;
+                }
+
+                li:hover a {
+                    background-color: blue;
+                }
+            }
+
+            #menuHamburger {
+                visibility: visible;
+            }
+        }
+
+        // template home > index.html.twig
+        .home {
+            top: 10%;
+        }
+
+        // template projects > index.html.twig
+        .pageProjects {
+            top: 2%;
+
+            .typewriter {
+                width: 90%;
+
+                h4 {
+                    font-size: 2.9vw;
+                }
+            }
+
+            .carousel {
+                width: 90%;
+
+                .projects {
+                    font-size: 2.3vw;
+
+                    .project {
+                        .projectName {
+                            font-size: 2.7vw;
+                        }
+                    }    
+                }
+            }
+        }
+
+    }
+
+    // template home -> about.html.twig
+   .about 
+   {
+       .aboutMe 
+       {
+           top: 10%;
+
+           .Me {
+                margin-left: 21%;
+
+                .myPhoto { 
+                    img {
+                        width: 110px;
+                    }
+
+                    .overlay {
+                        background-color: #121315;
+                        width: 110px;
+                        height: 110px;
+                    }
+                }
+
+                .typewriting {
+                    .lignes {
+                        font-size: 2vw;
+                        color: white;
+                    }
+
+                    button {
+                        font-size: 2vw;
+                    }
+
+                    /* The typing effect */
+                    @keyframes type {
+                        from {width:0; visibility: hidden;}
+                        to {width: 60%; visibility: visible;}
+                    }
+                }
+            }
+        }
+   }    
+}
+
+
+@media only screen and (max-width: 700px) 
+{
+    body 
+    {
+        background-image: url("/public/images/home2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                li:hover a {
+                    background-image: linear-gradient(to right top, #093241, #00616f, #00937b, #00c361);
+                }
+
+                li:not(:first-child) {
+                    background-color: black;    
+                }
+            }
+        }
+
+        // template home > index.html.twig
+        .home {
+            .doors {
+                background-image: url("/public/images/eiffelnight.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                .welcomeMessage {
+                    bottom: 10%;
+                    color: white;
+
+                    .message1, .message2 {
+                        text-shadow: 0 1px 0 #ccc, 
+                                    0 2px 0 #c9c9c9,
+                                    0 3px 0 #bbb,
+                                    0 4px 0 #b9b9b9,
+                                    0 5px 0 #aaa,
+                                0 6px 1px rgba(0,0,0,.1),
+                                0 0 5px rgba(0,0,0,.1),
+                                0 1px 3px rgba(0,0,0,.3),
+                                0 3px 5px rgba(0,0,0,.2),
+                                0 5px 10px rgba(0,0,0,.25),
+                                0 10px 10px rgba(0,0,0,.2),
+                                0 20px 20px rgba(0,0,0,.15);
+                    }
+                }
+            }
+        }
+    }
+
+    // template home -> about.html.twig
+    .about 
+    {
+       .aboutMe {
+           top: 7%;
+
+           .Me {
+                .typewriting {
+                    .lignes {
+                        font-size: 2.1vw;
+                    }
+
+                    button {
+                        font-size: 2.1vw;
+                    }
+                }
+            }
+       }
+    }
+}
+
+
+@media only screen and (max-width: 600px) 
+{
+    body 
+    {
+        background-image: url("/public/images/home3.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                li:hover a {
+                    background: rgb(2,0,36);
+                    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(46,44,77,1) 47%);
+                }
+            }
+        }
+
+        // template home > index.html.twig
+        .home {
+            .doors {
+                background-image: url("/public/images/eiffelmoon.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+        // template projects > index.html.twig
+        .pageProjects {
+            .carousel {
+                .projects {
+                    font-size: 2.5vw;
+                }
+            }
+        }
+    }
+
+    // template home -> about.html.twig
+    .about 
+    {
+       .aboutMe {
+           top: 5%;
+
+           .Me {
+                .myPhoto {
+                    img {
+                        width: 80px;
+                    }
+
+                    .overlay {
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+            }
+       }
+    }
+}
+
+
+@media only screen and (max-width: 500px) 
+{
+    // template home -> about.html.twig
+    .about 
+    {
+       .aboutMe {
+           top: 3.5%;
+
+           .Me {
+                .myPhoto {
+                    img {
+                        width: 60px;
+                    }
+
+                    .overlay {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+
+                .typewriting 
+                {
+                    button {
+                        padding: 0;
+                    }
+                }
+            }
+       }
+    }
+}

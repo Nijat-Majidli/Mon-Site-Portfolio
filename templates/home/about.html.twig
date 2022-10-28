@@ -4,15 +4,42 @@
 
 {% block body %}
     <body class="about">
-        <div class="container-fluid">
-            <div >
-                <img src="{{ asset('/images/nijat.png') }}" width="7%" height="7%" class="myPhoto" alt="myphoto"> 
+        {# <picture>
+            <source media="(min-width:1401px)" srcset="{{ asset('/images/about.jpg') }}">
+            <source media="(min-width:801px)" srcset="{{ asset('/images/about1.1.jpg') }}">
+             <source media="(min-width:401px)" srcset="{{ asset('/images/about2.jpg') }}">
+            <img src="{{ asset('/images/about3.jpg') }}" alt="Flowers" class="bg-photo">
+        </picture> #}
+
+        {# <img src="{{ asset('/images/about.jpg') }}" alt="myphoto" class="bg-photo">  #}
+
+        <div class="aboutMe">
+            <div class="screen">
+                <div class="myPhoto">
+                    <img src="{{ asset('/images/nijat.png') }}" alt="myphoto"> 
+                    <div class="overlay"> </div>
+                </div>
+                
+                <div class="typewriting">
+                    <h6 class="ligne-1 lignes"> Hi, my name is Nijat. </h6>
+                    <h6 class="ligne-2 lignes"> I am a web developper. </h6>
+                    <h6 class="ligne-3 lignes"> Want to know more about me ? </h6>
+                    <h6 class="ligne-4 lignes"> Download my CV below : </h6>
+                    <a href="/mydocs/CV.pdf" target="_blank"> <button class="btn btn-info"> Download </button> </a> 
+                </div>
             </div>
-             <div class="typewriting">
-                <h6 class="aboutMe-1"> Hi, my name is Nijat. I am a web developper. </h6>
-                <h6 class="aboutMe-2"> Do you want to know more about me ? </h6>
-                <h6 class="aboutMe-3"> Please download my CV below : </h6>
-                <a href="/mydocs/CV.pdf" target="_blank"> <button class="btn btn-info mt-3"> Download </button> </a> 
+            <div class="screen-below">
+            </div>
+            <div class="screen-leg">
+                <div class="leg leg-1">
+                </div>
+                <div class="leg leg-2">
+                </div>
+            </div>
+
+            <div class="icons">
+                <div><a href="https://www.linkedin.com/in/nijat-majidli-03889627/" target="_blank"><i class='fab fa-linkedin'></i></a></div>
+                <div><a href="https://github.com/Nijat-Majidli?tab=repositories" target="_blank"><i class='fab fa-github'></i></a></div>
             </div>
         </div>
     </body>

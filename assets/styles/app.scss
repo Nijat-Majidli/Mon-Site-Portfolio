@@ -1,19 +1,87 @@
-body, html {
+body, html 
+{
     height: 100%;
     margin: 0%;
     padding: 0%;
 }
 
 // template base.html.twig
-body {
+body 
+{
     background-image: url("/public/images/home.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 
+    .icons {
+        position: absolute;
+        bottom: 20%;
+
+        a {
+            color: 0;
+        }
+
+        .fab {
+            font-size: 4vw;
+            margin-top: 2vh;
+        }
+
+        .fa-linkedin {
+            color: rgb(10, 102, 194);
+        }
+        .fa-github {
+            color: black;
+        }
+    }
+
+    // template base.html.twig
     .nav-bar 
     {
-        ul {
+        #navMenu 
+        {
+            justify-content: center;
+            
             li {
+                &:not(:first-child) {
+                    opacity: 0;
+                    animation: navlink 700ms ease-in 1 normal forwards,;
+                    -webkit-animation: navlink 700ms ease-in 1 normal forwards,;
+                }
+
+                @keyframes navlink {
+                    0% {
+                        opacity: 0;
+                        transform: scale(0);
+                        -webkit-transform: scale(0);
+                        -moz-transform: scale(0);
+                        -ms-transform: scale(0);
+                        -o-transform: scale(0);
+                    }
+                    90% {
+                        opacity: 1;
+                        transform: scale(1.3);
+                        -webkit-transform: scale(1.3);
+                        -moz-transform: scale(1.3);
+                        -ms-transform: scale(1.3);
+                        -o-transform: scale(1.3);
+}
+                    100% {
+                        opacity: 1;
+                        transform: scale(1);
+                        -webkit-transform: scale(1);
+                        -moz-transform: scale(1);
+                        -ms-transform: scale(1);
+                        -o-transform: scale(1);
+                    }
+                }    
+
+                &:first-child {
+                    text-align: center;
+                }
+
+                a {
+                    font-size: 1.4vw;
+                }
+                
                 .smallLogo {
                     max-width: 40%;
                     height: auto;
@@ -33,12 +101,13 @@ body {
         
         #menuHamburger {
             position: absolute;
-            color: blue;
-            top: 0%;
+            color: white;
+            top: 1%;
+            left: 1%;
             visibility: hidden;
 
             i {
-                font-size: 48px;
+                font-size: 7vw;
             }
         }
 
@@ -65,19 +134,22 @@ body {
     }    
 
     // template home > index.html.twig
-    .home {
+    .home 
+    {
         position: relative;
-        top: 20%;
-        padding-left: 2%;
+        top: 15%;
+        margin-left: 1%;
 
-        .doors{
+        .doors
+        {
             position: relative;
             display: grid;
             grid-template-columns: auto auto;
             width: 25%;
-            margin-left: 25%;
-            background-image: url("/public/images/road.jpeg");
+            margin-left: 23%;
+            background-image: url("/public/images/eiffelday.jpg");
             background-size: cover;
+            background-repeat: no-repeat;
             
             .door {
                 width: 100%;
@@ -123,14 +195,15 @@ body {
                 100% {opacity:1;}
             }
 
-            .welcomeMessage {
+            .welcomeMessage 
+            {
                 display: inline-block;
                 font-family: fantasy;
                 font-size: 2vw;
                 color: blue;
                 position: absolute;
-                bottom: 52%;
-                left: 8%;
+                bottom: 30%;
+                left: 15%;
                 transform: rotateX(25deg);
                 -webkit-transform: rotateX(25deg);
                 -moz-transform: rotateX(25deg);
@@ -186,315 +259,325 @@ body {
                 }
             }
         }  
+    }  
 
-        .icons {
-            position: absolute;
-            bottom: 10%;
+    // template projects > index.html.twig
+    .pageProjects 
+    {
+        position: relative;
+        top: 8%;
+        margin-left: 1%;
 
-            .fab {
-                font-size: 5vh;
-                margin-top: 2vh;
+        .typewriter 
+        {
+            width: 50%;
+            text-align: center;
+            margin-left: 10%;
+            margin-bottom: 1%;
+
+            h4 {
+                margin: auto auto;
+                font-family: Audiowide;
+                font-size: 1.5vw;
+                color: blue;
+                overflow: hidden;
+                border-right: .15em solid orange;
+                white-space: nowrap;
+                letter-spacing: .15em;
+                animation: typing 5s steps(40, end) forwards, blink-caret .5s step-end infinite;
+                -webkit-animation: typing 5s steps(40, end) forwards, blink-caret .5s step-end infinite;
             }
-
-            .fa-linkedin {
-                color: rgb(10, 102, 194);
+        
+            /* The typing effect */
+            @keyframes typing {
+                from {width: 0%;}
+                to {width: 30%;}
             }
             
+            /* The typewriter cursor effect */
+            @keyframes blink-caret {
+                from {border-color: transparent;}
+                50% {border-color: orange;}
+                to {border-color: transparent;}
+            }
         }
-    }  
+        
+        .carousel 
+        {
+            width: 50%;
+            margin-left: 10%;
+
+            .carousel-indicators {
+                top: 100%;
+                filter: invert(100%);
+                -webkit-filter: invert(100%);
+            }
+
+            .projects {
+                position: relative;
+                display: grid;
+                grid-template-columns: auto auto;
+                font-size: 1vw;
+
+                .project {
+                    .projectName {
+                        text-align: center;
+                        color:blueviolet;
+                        font-family: cursive;
+                    }
+            
+                    .projectPhoto {
+                        img {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    p {
+                        margin-bottom: 0%;
+                    }
+                
+                    .suite a, .reduire a {
+                        visibility: hidden;
+                        position: absolute;
+                    }
+                
+                    .projectLink {
+                        font-family: cursive;
+                    }
+                }
+            }
+
+            .carousel-control-next, .carousel-control-prev {
+                filter: invert(100%);
+                opacity: 1;
+                width: 5%;
+                -webkit-filter: invert(100%);
+            }
+        }
+    }
 }
+
 
 // template home -> about.html.twig
-.about {
-    background-image: url("/public/images/about.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+.about 
+{
+    margin: 0%;
+    padding: 0%;
+    background-image: none;
+    background-color: rgba(209,213,216,255);
+    
+    // picture {
+    //     .bg-photo {
+    //         z-index: -1;
+    //         position: absolute;
+    //         top: 0%;
+    //         bottom: 0%;
+    //         width: 100%;
+    //     }
+    // }
+   
+    .aboutMe 
+    {
+        position: relative;
+        top: 9%;
+        margin-left: 2%;
 
-    .myPhoto {
-        margin-top: 8%;
-        margin-left: 35%;
-    }
+        .screen 
+        {
+            margin-right: 25%;
+            margin-left: 25%;
+            padding: 5%;
+            background-color: white;
+            border: 25px solid black;
+            border-radius: 15px 15px 0 0;
+            -webkit-border-radius: 15px 15px 0 0;
+            -moz-border-radius: 15px 15px 0 0;
+            -ms-border-radius: 15px 15px 0 0;
+            -o-border-radius: 15px 15px 0 0;
+            
+            .myPhoto
+            { 
+                position: relative;
 
-    .typewriting {
-        margin: 1% 0 0 35%;
+                img {
+                   width: 7vw;
+                   height: auto;
+                   opacity: 0;
+                   animation: myphoto 3s linear 1s 1 normal forwards;
+                   -webkit-animation: myphoto 3s linear 1s 1 normal forwards;
+                }
 
-        .aboutMe-1, .aboutMe-2, .aboutMe-3 {
-            font-family: Audiowide;
-            color: white;
-            overflow: hidden;
-            border-right: .15em solid transparent;
-            white-space: nowrap;
-            padding: auto 0;
-            letter-spacing: .15em;
-            visibility: hidden;
-        }
+                /* Animation image */
+                @keyframes myphoto {
+                    from {opacity: 0;}
+                    to {opacity: 1;}
+                }
 
-        .aboutMe-1 {
-            animation: type 4s steps(30, end) forwards, blinking .5s 10 backwards;
-            -webkit-animation: type 4s steps(30, end) forwards, blinking .5s 10 backwards;
-        }
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    width: 150px;
+                    height: 150px;
+                    background-color: white;
+                    // background-color: #f6f4f5;
+                    animation: overlay 4s linear 1s 1 normal forwards;
+                    -webkit-animation: overlay 4s linear 1s 1 normal forwards;
+                }
 
-        .aboutMe-2 {
-            animation: type 4s steps(30, end) 5s forwards, blinking .5s 20 backwards;
-            -webkit-animation: type 4s steps(30, end) 5s forwards, blinking .5s 20 backwards;
-        }
+                /* Animation */
+                @keyframes overlay {
+                    0% {
+                        opacity:1;
+                        transform:translateX(0px);
+                        -webkit-transform:translateX(0px);
+                        -moz-transform:translateX(0px);
+                        -ms-transform:translateX(0px);
+                        -o-transform:translateX(0px);
+                    }
+                    99% {
+                        opacity: 1;
+                        transform:translateX(155px);
+                        -webkit-transform:translateX(155px);
+                        -moz-transform:translateX(155px);
+                        -ms-transform:translateX(155px);
+                        -o-transform:translateX(155px);
+                    }
+                    100% {
+                        opacity:0;
+                        transform:translateX(160px);
+                        -webkit-transform:translateX(160px);
+                        -moz-transform:translateX(160px);
+                        -ms-transform:translateX(160px);
+                        -o-transform:translateX(160px);
+                    }
+                }
+            }
 
-        .aboutMe-3 {
-            animation: type 3s steps(30, end) 10s forwards, blinking .5s 27 backwards;
-            -webkit-animation: type 3s steps(30, end) 10s forwards, blinking .5s 27 backwards;
-}
+            .typewriting 
+            {
+                margin-top: 0.5%;
+
+                .lignes {
+                    margin: 0%;
+                    font-family: Audiowide;
+                    font-size: 1.5vw;
+                    color: blue;
+                    overflow: hidden;
+                    border-right: .15em solid transparent;
+                    white-space: nowrap;
+                    padding: auto 0;
+                    letter-spacing: .15em;
+                    visibility: hidden;
+                }
+    
+                .ligne-1 {
+                    animation: type 4s steps(30, end) 4s forwards, blinking .5s 9 backwards;
+                    -webkit-animation: type 4s steps(30, end) 4s forwards, blinking .5s 9 backwards;
+                }
         
-        button {
-            font-family: Audiowide;
-            color: white;
-            visibility: hidden;
-            animation: type 3s steps(30, end) 14s forwards;
-            -webkit-animation: type 3s steps(30, end) 14s forwards;
+                .ligne-2 {
+                    animation: type 4s steps(30, end) 7s forwards, blinking .5s 19 backwards;
+                    -webkit-animation: type 4s steps(30, end) 7s forwards, blinking .5s 19 backwards;
+                }
+        
+                .ligne-3 {
+                    animation: type 4s steps(30, end) 11s forwards, blinking .5s 30 backwards;
+                    -webkit-animation: type 4s steps(30, end) 11s forwards, blinking .5s 30 backwards;
+                }
+
+                .ligne-4 {
+                    animation: type 4s steps(30, end) 16s forwards, blinking .5s 39 backwards;
+                    -webkit-animation: type 4s steps(30, end) 16s forwards, blinking .5s 39 backwards;
+                }
+                
+                button {
+                    margin-top: 0.5%;
+                    font-family: Audiowide;
+                    font-size: 1.3vw;
+                    color: white;
+                    visibility: hidden;
+                    animation: type 4s steps(40, end) 21s forwards;
+                    -webkit-animation: type 4s steps(40, end) 21s forwards;
+                }
+    
+                /* The typing effect */
+                @keyframes type {
+                    from {width:0; visibility: hidden;}
+                    to {width: 50%; visibility: visible;}
+                }
+                
+                /* The typewriter cursor effect */
+                @keyframes blinking {
+                    from {border-color: transparent;}
+                    50% {border-color: orange;}
+                    to {border-color: transparent;}
+                }
+            }
         }
 
-        /* The typing effect */
-        @keyframes type {
-            from {width:0; visibility: hidden;}
-            to {width: 40%; visibility: visible;}
+        .screen-below {
+            margin-right: 25%;
+            margin-left: 25%;
+            padding: 1.5%;
+            background-color: #b9bdbe;
+            border: 5px solid #b9bdbe;;
+            border-radius: 0 0 15px 15px;
+            -webkit-border-radius: 0 0 15px 15px;
+            -moz-border-radius: 0 0 15px 15px;
+            -ms-border-radius: 0 0 15px 15px;
+            -o-border-radius: 0 0 15px 15px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, 
+                        rgba(0, 0, 0, 0.22) 0px 19px 12px;
+        }
+
+        .screen-leg 
+        {
+            position: relative;
+            perspective: 80px;
+
+            .leg {
+                background-color: #b9bdbe;
+                position: absolute;
+                transform-style: preserve-3d;
+            }
+
+            .leg-1 {
+                right: 46%;
+                left: 46%;
+                top: 10%;
+                padding: 1%;
+                transform: rotateX(15deg);
+                -webkit-transform: rotateX(15deg);
+                -moz-transform: rotateX(15deg);
+                -ms-transform: rotateX(15deg);
+                -o-transform: rotateX(15deg);
+            }
+
+            .leg-2 {
+                right: 45%;
+                left: 45%;
+                top: 70% ;
+                padding: 1.5%;
+                border-top: 1px solid gray;
+                border-bottom: 3px solid lightgray;
+                border-radius: 0 0 15px 15px;
+                -webkit-border-radius: 0 0 15px 15px;
+                -moz-border-radius: 0 0 15px 15px;
+                -ms-border-radius: 0 0 15px 15px;
+                -o-border-radius: 0 0 15px 15px;
+                transform: rotateX(60deg);
+                -webkit-transform: rotateX(60deg);
+                -moz-transform: rotateX(60deg);
+                -ms-transform: rotateX(60deg);
+                -o-transform: rotateX(60deg);
+                box-shadow: rgba(0, 0, 0, 0.55) 0px 4px 8px, 
+                           
+                
+            }
         }
         
-        /* The typewriter cursor effect */
-        @keyframes blinking {
-            from {border-color: transparent;}
-            50% {border-color: orange;}
-            to {border-color: transparent;}
-        }
     }
 }     
-
-
-// template projects > index.html.twig
-.projects {
-    background-image: url("/public/images/projects.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    .typewriter {
-        display: flex;
-        justify-content: flex-start;
-
-        h2 {
-            font-family: Audiowide;
-            color: blue;
-            overflow: hidden;
-            border-right: .15em solid orange;
-            white-space: nowrap;
-            margin: 5% 0 3% 25%;
-            padding: auto 0;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
-            -webkit-animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
-        }
-    
-        /* The typing effect */
-        @keyframes typing {
-            from {width:0%;}
-            to {width: 15%;}
-        }
-        
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-            from {border-color: transparent;}
-            50% {border-color: black;}
-            to {border-color: transparent;}
-        }
-    }
-      
-    .projectName {
-        text-align: center;
-        font-family: cursive;
-        color:blueviolet
-    }
-
-    .description, .describe {
-        visibility: hidden;
-        font-size: medium;
-        position: absolute;
-        margin-left: 10px;
-    }
-
-    .projectLink {
-        font-family: cursive;
-        font-size:medium;
-    }
-}
-
-
-
-
-// RESPONSIVE DESIGN
-@media only screen and (max-width: 1395px) {
-    body {
-        background-image: url("/public/images/home1.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        .nav-bar {
-            ul {
-                a {
-                    color: white;
-                }
-            }
-        }
-
-        .home {
-            .icons {
-                .fa-linkedin {
-                    color: white;
-                    background-color: rgb(10, 102, 194);
-                }
-                .fa-github {
-                    color: white;
-                }
-            }
-
-            .hello {
-                .welcomeMessage {
-                    color: white;
-
-                    .message1, .message2 {
-                        text-shadow: 0 1px 0 #ccc, 
-                                    0 2px 0 #c9c9c9,
-                                    0 3px 0 #bbb,
-                                    0 4px 0 #b9b9b9,
-                                    0 5px 0 #aaa,
-                                0 6px 1px rgba(0,0,0,.1),
-                                0 0 5px rgba(0,0,0,.1),
-                                0 1px 3px rgba(0,0,0,.3),
-                                0 3px 5px rgba(0,0,0,.2),
-                                0 5px 10px rgba(0,0,0,.25),
-                                0 10px 10px rgba(0,0,0,.2),
-                                0 20px 20px rgba(0,0,0,.15);
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 620px) {
-    body {
-        background-image: url("/public/images/home2.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        .nav-bar {
-            ul {
-                a {
-                    color: blue;
-                }
-            }
-        }
-
-        .home {
-            .icons {
-                .fa-linkedin {
-                    color: rgb(10, 102, 194);
-                    background-color: transparent;
-                }
-                .fa-github {
-                    color: black;
-                }
-            }
-
-            .hello {
-                .welcomeMessage {
-                    color: blue;
-
-                    .message1, .message2 {
-                        text-shadow: 1px 1px 1px #051646,
-                            1px 2px 1px #051646,
-                            1px 3px 1px #051646,
-                            1px 4px 1px #051646,
-                            1px 5px 1px #051646,
-                        1px 18px 6px rgba(16,16,16,0.4),
-                        1px 22px 10px rgba(16,16,16,0.2),
-                        1px 25px 35px rgba(16,16,16,0.2),
-                        1px 30px 60px rgba(16,16,16,0.4);
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 550px) {
-    body {
-        .nav-bar {
-            #navMenu {
-                display: block;
-                visibility: hidden;
-            }
-
-            #menuHamburger {
-                visibility: visible;
-            }
-        }
-
-        .home {
-            .logo {
-                margin-top: 5vh;
-            }
-
-            .hello {
-                .welcomeMessage {
-                    
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 465px) {
-    body {
-        background-image: url("/public/images/home3.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        .nav-bar {
-            ul {
-                a {
-                    color: white;
-                }
-            }
-
-            #menuHamburger {
-                color: white;
-            }
-        }
-
-        .home {
-            .hello {
-                .welcomeMessage {
-                    color: white;
-
-                    .message1, .message2 {
-                        text-shadow: 0 1px 0 #ccc, 
-                                    0 2px 0 #c9c9c9,
-                                    0 3px 0 #bbb,
-                                    0 4px 0 #b9b9b9,
-                                    0 5px 0 #aaa,
-                                0 6px 1px rgba(0,0,0,.1),
-                                0 0 5px rgba(0,0,0,.1),
-                                0 1px 3px rgba(0,0,0,.3),
-                                0 3px 5px rgba(0,0,0,.2),
-                                0 5px 10px rgba(0,0,0,.25),
-                                0 10px 10px rgba(0,0,0,.2),
-                                0 20px 20px rgba(0,0,0,.15);
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-
-
 
 
