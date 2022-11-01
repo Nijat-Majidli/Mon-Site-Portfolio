@@ -4,15 +4,6 @@
 
 {% block body %}
     <body class="about">
-        {# <picture>
-            <source media="(min-width:1401px)" srcset="{{ asset('/images/about.jpg') }}">
-            <source media="(min-width:801px)" srcset="{{ asset('/images/about1.1.jpg') }}">
-             <source media="(min-width:401px)" srcset="{{ asset('/images/about2.jpg') }}">
-            <img src="{{ asset('/images/about3.jpg') }}" alt="Flowers" class="bg-photo">
-        </picture> #}
-
-        {# <img src="{{ asset('/images/about.jpg') }}" alt="myphoto" class="bg-photo">  #}
-
         <div class="aboutMe">
             <div class="screen">
                 <div class="myPhoto">
@@ -28,12 +19,29 @@
                     <a href="/mydocs/CV.pdf" target="_blank"> <button class="btn btn-info"> Download </button> </a> 
                 </div>
             </div>
+            
             <div class="screen-below">
             </div>
+            
             <div class="screen-leg">
-                <div class="leg leg-1">
+                <div class="leg-1">
                 </div>
-                <div class="leg leg-2">
+                <div class="leg-2">
+                </div>
+            </div>
+
+            <div class="keyboard">
+                <div class="clavier"> 
+                    {% for digit in 0..10 %}
+                        <div class="digits"> {{ digit }} </div>
+                    {% endfor %}
+                    <br/>
+                    {% set number = 1 %}
+                    
+                    {% for letter in 'a'..'z' %}
+                        <div class="letters" id="letter{{number}}"> {{ letter }} </div>
+                        {% set number = number + 1 %}
+                    {% endfor %}
                 </div>
             </div>
 

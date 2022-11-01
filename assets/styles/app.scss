@@ -5,7 +5,6 @@ body, html
     padding: 0%;
 }
 
-// template base.html.twig
 body 
 {
     background-image: url("/public/images/home.jpg");
@@ -288,13 +287,11 @@ body
                 -webkit-animation: typing 5s steps(40, end) forwards, blink-caret .5s step-end infinite;
             }
         
-            /* The typing effect */
             @keyframes typing {
                 from {width: 0%;}
                 to {width: 30%;}
             }
             
-            /* The typewriter cursor effect */
             @keyframes blink-caret {
                 from {border-color: transparent;}
                 50% {border-color: orange;}
@@ -366,30 +363,20 @@ body
     padding: 0%;
     background-image: none;
     background-color: rgba(209,213,216,255);
-    
-    // picture {
-    //     .bg-photo {
-    //         z-index: -1;
-    //         position: absolute;
-    //         top: 0%;
-    //         bottom: 0%;
-    //         width: 100%;
-    //     }
-    // }
    
     .aboutMe 
     {
         position: relative;
-        top: 9%;
+        top: 8%;
         margin-left: 2%;
 
         .screen 
         {
             margin-right: 25%;
             margin-left: 25%;
-            padding: 5%;
+            padding: 2%;
             background-color: white;
-            border: 25px solid black;
+            border: 18px solid black;
             border-radius: 15px 15px 0 0;
             -webkit-border-radius: 15px 15px 0 0;
             -moz-border-radius: 15px 15px 0 0;
@@ -404,11 +391,10 @@ body
                    width: 7vw;
                    height: auto;
                    opacity: 0;
-                   animation: myphoto 3s linear 1s 1 normal forwards;
-                   -webkit-animation: myphoto 3s linear 1s 1 normal forwards;
+                   animation: myphoto 4s linear 1s 1 normal forwards;
+                   -webkit-animation: myphoto 4s linear 1s 1 normal forwards;
                 }
 
-                /* Animation image */
                 @keyframes myphoto {
                     from {opacity: 0;}
                     to {opacity: 1;}
@@ -420,12 +406,10 @@ body
                     width: 150px;
                     height: 150px;
                     background-color: white;
-                    // background-color: #f6f4f5;
                     animation: overlay 4s linear 1s 1 normal forwards;
                     -webkit-animation: overlay 4s linear 1s 1 normal forwards;
                 }
 
-                /* Animation */
                 @keyframes overlay {
                     0% {
                         opacity:1;
@@ -472,23 +456,23 @@ body
                 }
     
                 .ligne-1 {
-                    animation: type 4s steps(30, end) 4s forwards, blinking .5s 9 backwards;
-                    -webkit-animation: type 4s steps(30, end) 4s forwards, blinking .5s 9 backwards;
+                    animation: type 5s steps(40, end) 5s forwards, blinking .5s 15 backwards;
+                    -webkit-animation: type 5s steps(40, end) 5s forwards, blinking .5s 15 backwards;
                 }
         
                 .ligne-2 {
-                    animation: type 4s steps(30, end) 7s forwards, blinking .5s 19 backwards;
-                    -webkit-animation: type 4s steps(30, end) 7s forwards, blinking .5s 19 backwards;
+                    animation: type 5s steps(40, end) 10s forwards, blinking .5s 25 backwards;
+                    -webkit-animation: type 5s steps(40, end) 10s forwards, blinking .5s 25 backwards;  
                 }
         
                 .ligne-3 {
-                    animation: type 4s steps(30, end) 11s forwards, blinking .5s 30 backwards;
-                    -webkit-animation: type 4s steps(30, end) 11s forwards, blinking .5s 30 backwards;
+                    animation: type 5s steps(40, end) 15s forwards, blinking .5s 39 backwards;
+                    -webkit-animation: type 5s steps(40, end) 15s forwards, blinking .5s 39 backwards;
                 }
 
                 .ligne-4 {
-                    animation: type 4s steps(30, end) 16s forwards, blinking .5s 39 backwards;
-                    -webkit-animation: type 4s steps(30, end) 16s forwards, blinking .5s 39 backwards;
+                    animation: type 5s steps(40, end) 20s forwards, blinking .5s 49 backwards;
+                    -webkit-animation: type 5s steps(40, end) 20s forwards, blinking .5s 49 backwards;
                 }
                 
                 button {
@@ -497,17 +481,15 @@ body
                     font-size: 1.3vw;
                     color: white;
                     visibility: hidden;
-                    animation: type 4s steps(40, end) 21s forwards;
-                    -webkit-animation: type 4s steps(40, end) 21s forwards;
+                    animation: type 5s steps(40, end) 25s forwards;
+                    -webkit-animation: type 5s steps(40, end) 25s forwards;
                 }
     
-                /* The typing effect */
                 @keyframes type {
                     from {width:0; visibility: hidden;}
-                    to {width: 50%; visibility: visible;}
+                    to {width: 100%; visibility: visible;}
                 }
                 
-                /* The typewriter cursor effect */
                 @keyframes blinking {
                     from {border-color: transparent;}
                     50% {border-color: orange;}
@@ -519,7 +501,7 @@ body
         .screen-below {
             margin-right: 25%;
             margin-left: 25%;
-            padding: 1.5%;
+            padding: 1%;
             background-color: #b9bdbe;
             border: 5px solid #b9bdbe;;
             border-radius: 0 0 15px 15px;
@@ -531,22 +513,19 @@ body
                         rgba(0, 0, 0, 0.22) 0px 19px 12px;
         }
 
-        .screen-leg 
-        {
+        .screen-leg {
             position: relative;
             perspective: 80px;
 
-            .leg {
-                background-color: #b9bdbe;
-                position: absolute;
-                transform-style: preserve-3d;
-            }
-
             .leg-1 {
+                position: absolute;
                 right: 46%;
                 left: 46%;
                 top: 10%;
                 padding: 1%;
+                background-color: #b9bdbe;
+                border-bottom: 1px solid linear-gradient(grey, black, grey);
+                transform-style: preserve-3d;
                 transform: rotateX(15deg);
                 -webkit-transform: rotateX(15deg);
                 -moz-transform: rotateX(15deg);
@@ -555,10 +534,12 @@ body
             }
 
             .leg-2 {
+                position: absolute;
                 right: 45%;
                 left: 45%;
-                top: 70% ;
+                top: 70%;
                 padding: 1.5%;
+                background-color: #b9bdbe;
                 border-top: 1px solid gray;
                 border-bottom: 3px solid lightgray;
                 border-radius: 0 0 15px 15px;
@@ -566,18 +547,434 @@ body
                 -moz-border-radius: 0 0 15px 15px;
                 -ms-border-radius: 0 0 15px 15px;
                 -o-border-radius: 0 0 15px 15px;
+                transform-style: preserve-3d;
                 transform: rotateX(60deg);
                 -webkit-transform: rotateX(60deg);
                 -moz-transform: rotateX(60deg);
                 -ms-transform: rotateX(60deg);
                 -o-transform: rotateX(60deg);
                 box-shadow: rgba(0, 0, 0, 0.55) 0px 4px 8px, 
-                           
-                
+            }
+        }
+
+        .keyboard 
+        {
+            position: relative;
+            perspective: 80px;
+
+            .clavier 
+            {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 30%;
+                margin-top: 3.5%;
+                margin-right: auto;
+                margin-left: auto;
+                padding: 0.3%;
+                background-color: #b9bdbe;
+                border: 1px solid gray;
+                border-bottom: 4px solid gray;
+                border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                transform-style: preserve-3d;
+                transform: rotateX(15deg);
+                    -webkit-transform: rotateX(15deg);
+                    -moz-transform: rotateX(15deg);
+                    -ms-transform: rotateX(15deg);
+                    -o-transform: rotateX(15deg);
+
+                .digits, .letters {
+                    border: 1px solid gray;
+                    border-bottom: 4px solid gray;
+                    width: 7%;
+                    height: 7%;
+                    margin: 1%;
+                    margin-bottom: 0.3%;
+                    text-align: center;
+                }
+      
+                $delay: 5;
+                $myArray: 8, 9, 13, 25, 14, 1, 13, 5, 9, 19, 14, 9, 10, 1, 20, 9, 1, 13, 1, 23, 5, 2, 4, 5, 22, 5, 12, 15, 16, 16, 5, 18, 23, 1, 14, 20, 20, 15, 11, 14, 15, 23, 13, 15, 18, 5, 1, 2, 15, 21, 20, 13, 5, 4, 15, 23, 14, 12, 15, 1, 4, 13, 25, 3, 22, 2, 5, 12, 15, 23;
+    
+                @each $i in $myArray 
+                {
+                    #letter#{$i} 
+                    {
+                        animation: click 0.29s ease #{$delay}s 1 normal backwards;
+                        -webkit-animation: click 0.29s ease #{$delay}s 1 normal backwards;
+                    }
+    
+                    $delay:$delay+0.29;
+                }
+    
+                @keyframes click {
+                    from { border-bottom: 4px solid gray;}
+                    to { border-bottom: 0.5px solid gray; background-color: blue;}
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// RESPONSIVE DESIGN
+@media only screen and (max-width: 1600px) 
+{
+    body 
+    {
+        // template projects > index.html.twig
+        .pageProjects {
+            .typewriter {
+                width: 55%;
+                margin-left: 8%;
+                margin-bottom: 2%;
+            }
+
+            .carousel {
+                width: 55%;
+                margin-left: 8%;
+
+                .projects {
+                    font-size: 1.2vw;
+                }
+            }
+        }
+    }  
+}
+
+@media only screen and (max-width: 1400px) 
+{
+    body 
+    {
+        background-image: url("/public/images/home1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .icons {
+            .fab {
+                color: white;
+            }
+            .fa-linkedin {
+                background-color: rgb(10, 102, 194);
+            }
+        }
+
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                li {
+                    a {
+                        color: white;
+                        font-size: 1.7vw;
+                    }
+                }
+            }
+        }
+
+        // template home > index.html.twig
+        .home {
+            top: 20%;
+            
+            .doors {
+                width: 30%;
+                margin-left: 35%;
+                background-image: url("/public/images/eiffel.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                .welcomeMessage {
+                    bottom: 20%;
+                    color: cadetblue;
+                }
+            }
+        }
+
+        // template projects > index.html.twig
+        .pageProjects {
+            .typewriter {
+                width: 65%;
+
+                h4 {
+                    font-size: 2vw;
+                    color: white;
+                }
+            }
+
+            .carousel {
+                width: 65%;
+
+                .carousel-indicators {
+                    filter: invert(0%);
+                    -webkit-filter: invert(0%);
+                }
+
+                .projects {
+                    color: white;
+                    font-size: 1.5vw;
+
+                    .project {
+                        .projectName {
+                            color: white;
+                        }
+                    }    
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) 
+{
+    body 
+    {
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                li {
+                    a {
+                        font-size: 2vw;
+                    }
+                }
             }
         }
         
+        // template projects > index.html.twig
+        .pageProjects {
+            .typewriter {
+                width: 75%;
+
+                h4 {
+                    font-size: 2.3vw;
+                }
+            }
+
+            .carousel {
+                width: 75%;
+
+                
+                .projects {
+                    font-size: 1.8vw;
+                }
+            }
+        }
+    }  
+}
+
+@media only screen and (max-width: 1000px) 
+{
+    body 
+    {
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                li {
+                    a {
+                        font-size: 2.5vw;
+                    }
+                }
+            }
+        }
+
+        // template home > index.html.twig
+        .home {
+            .doors {
+                width: 40%;
+                
+                .welcomeMessage {
+                    font-size: 3vw;
+                }
+            }
+        }
+
+        // template projects > index.html.twig
+        .pageProjects {
+            .typewriter {
+                width: 85%;
+                margin-bottom: 3%;
+
+                h4 {
+                    font-size: 2.5vw;
+                }
+            }
+
+            .carousel {
+                width: 85%;
+
+                .projects {
+                    font-size: 2vw;
+                    
+                    .project {
+                        .projectName {
+                            font-size: 2.5vw;
+                        }
+                    }    
+                }
+            }
+        }
     }
-}     
+}
+
+@media only screen and (max-width: 800px) 
+{
+    body 
+    {
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                display: block;
+                margin-top: 5%;
+                
+                li:not(:first-child) {
+                    width: 30%;
+                    visibility: hidden;
+                }
+
+                li:first-child {
+                    position: absolute;
+                    left: 70%;
+                    top: 2%;
+                }
+
+                li:hover a {
+                    background-color: blue;
+                }
+            }
+
+            #menuHamburger {
+                visibility: visible;
+            }
+        }
+
+        // template home > index.html.twig
+        .home {
+            top: 10%;
+        }
+
+        // template projects > index.html.twig
+        .pageProjects {
+            top: 2%;
+
+            .typewriter {
+                width: 90%;
+
+                h4 {
+                    font-size: 2.9vw;
+                }
+            }
+
+            .carousel {
+                width: 90%;
+
+                .projects {
+                    font-size: 2.3vw;
+
+                    .project {
+                        .projectName {
+                            font-size: 2.7vw;
+                        }
+                    }    
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) 
+{
+    body 
+    {
+        background-image: url("/public/images/home2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                li:hover a {
+                    background-image: linear-gradient(to right top, #093241, #00616f, #00937b, #00c361);
+                }
+
+                li:not(:first-child) {
+                    background-color: black;    
+                }
+            }
+        }
+
+        // template home > index.html.twig
+        .home {
+            .doors {
+                background-image: url("/public/images/eiffelnight.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                .welcomeMessage {
+                    bottom: 10%;
+                    color: white;
+
+                    .message1, .message2 {
+                        text-shadow: 0 1px 0 #ccc, 
+                                    0 2px 0 #c9c9c9,
+                                    0 3px 0 #bbb,
+                                    0 4px 0 #b9b9b9,
+                                    0 5px 0 #aaa,
+                                0 6px 1px rgba(0,0,0,.1),
+                                0 0 5px rgba(0,0,0,.1),
+                                0 1px 3px rgba(0,0,0,.3),
+                                0 3px 5px rgba(0,0,0,.2),
+                                0 5px 10px rgba(0,0,0,.25),
+                                0 10px 10px rgba(0,0,0,.2),
+                                0 20px 20px rgba(0,0,0,.15);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 600px) 
+{
+    body 
+    {
+        background-image: url("/public/images/home3.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        // template base.html.twig
+        .nav-bar {
+            #navMenu {
+                li:hover a {
+                    background: rgb(2,0,36);
+                    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(46,44,77,1) 47%);
+                }
+            }
+        }
+
+        // template home > index.html.twig
+        .home {
+            .doors {
+                background-image: url("/public/images/eiffelmoon.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+        // template projects > index.html.twig
+        .pageProjects {
+            .carousel {
+                .projects {
+                    font-size: 2.5vw;
+                }
+            }
+        }
+    }
+}
+
 
 
