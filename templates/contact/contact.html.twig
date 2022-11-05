@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+        <body class="contact">
+            <div class="contactForm">
+                <div>
+                    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                        <h2> Contact me </h2>
+                        <div class="form-group"> 
+                            {{ form_widget(form.name) }} 
+                            {{ form_errors(form.name) }} 
+                        </div>
+                        <div class="form-group"> 
+                            {{ form_widget(form.email) }} 
+                            {{ form_errors(form.email) }} 
+                        </div>
+                        <div class="form-group"> 
+                            {{ form_widget(form.content) }}
+                            {{ form_errors(form.content) }}  
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success w-25">Send</button>
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+
+                <div class="icons">
+                    <div><a href="https://www.linkedin.com/in/nijat-majidli-03889627/" target="_blank"><i class='fab fa-linkedin'></i></a></div>
+                    <div><a href="https://github.com/Nijat-Majidli?tab=repositories" target="_blank"><i class='fab fa-github'></i></a></div>
+                </div>
+            </div>
+        </body>
+{% endblock %}
