@@ -20,15 +20,9 @@ body
         }
 
         .fab {
-            font-size: 4vw;
+            width: 4vw;
             margin-top: 2vh;
-        }
-
-        .fa-linkedin {
-            color: rgb(10, 102, 194);
-        }
-        .fa-github {
-            color: black;
+            border-radius: 10px;
         }
     }
 
@@ -724,10 +718,7 @@ body
 
         .icons {
             .fab {
-                color: white;
-            }
-            .fa-linkedin {
-                background-color: rgb(10, 102, 194);
+                background-color: white;
             }
         }
 
