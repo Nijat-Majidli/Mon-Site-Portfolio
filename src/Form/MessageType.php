@@ -48,6 +48,21 @@ class MessageType extends AbstractType
                     ])
                 ]
             ])
+
+            ->add('subject', TextType::class, [ 
+                'attr' => ['placeholder' => 'Subject'], 
+                'required' => true, 
+                'constraints' => [ 
+                    new NotBlank([ 
+                        'message' => 'Please enter the subject' 
+                    ]), 
+                    new Length([ 
+                        'min' => 2, 
+                        'minMessage' => 'The subject must contain at least two characters',  
+                        'max' => 255, 
+                    ]), 
+                ] 
+            ])
             
             ->add('content', TextareaType::class, [ 
                 'attr' => ['placeholder' => 'Your message', 'rows' => '6'],

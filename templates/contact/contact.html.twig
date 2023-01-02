@@ -17,6 +17,10 @@
                             {{ form_errors(form.email) }} 
                         </div>
                         <div class="form-group"> 
+                            {{ form_widget(form.subject) }} 
+                            {{ form_errors(form.subject) }} 
+                        </div>
+                        <div class="form-group"> 
                             {{ form_widget(form.content) }}
                             {{ form_errors(form.content) }}  
                         </div>
