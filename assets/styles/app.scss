@@ -11,7 +11,9 @@ body
     background-size: cover;
     background-repeat: no-repeat;
 
-    .icons {
+    // linkedin, github, whatsapp icons
+    .icons 
+    {
         position: absolute;
         bottom: 20%;
 
@@ -143,6 +145,14 @@ body
             background-image: url("/public/images/eiffelday.jpg");
             background-size: cover;
             background-repeat: no-repeat;
+            color: blue;
+            animation: doors 10s linear 12s infinite alternate forwards;
+            -webkit-animation: doors 10s linear 12s infinite alternate forwards;
+            
+            @keyframes doors {
+                from {background-image: url("/public/images/eiffelday.jpg"); color: blue;}
+                to {background-image: url("/public/images/eiffelmoon.jpg"); color: white;}
+            }
             
             .door {
                 width: 100%;
@@ -193,7 +203,6 @@ body
                 display: inline-block;
                 font-family: fantasy;
                 font-size: 2vw;
-                color: blue;
                 position: absolute;
                 bottom: 30%;
                 left: 15%;
@@ -727,7 +736,6 @@ body
             #navMenu {
                 li {
                     a {
-                        color: white;
                         font-size: 1.7vw;
                     }
                 }
@@ -741,20 +749,16 @@ body
             .doors {
                 width: 30%;
                 margin-left: 35%;
-                background-image: url("/public/images/eiffel.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
 
                 .welcomeMessage {
                     bottom: 20%;
-                    color: cadetblue;
                 }
             }
 
             .wrapper {
                 width: 54%;
                 margin-left: 22%;
-                color: white;
+                color: cadetblue;
                 font-size: 1.4rem;
             }
         }
@@ -766,7 +770,7 @@ body
 
                 h4 {
                     font-size: 2vw;
-                    color: white;
+                    color: lightseagreen;
                 }
             }
 
@@ -779,12 +783,12 @@ body
                 }
 
                 .projects {
-                    color: white;
+                    color: lightseagreen;
                     font-size: 1.5vw;
 
                     .project {
                         .projectName {
-                            color: white;
+                            color: lightseagreen;
                         }
                     }    
                 }
@@ -980,13 +984,9 @@ body
         // template home > index.html.twig
         .home {
             .doors {
-                background-image: url("/public/images/eiffelnight.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
 
                 .welcomeMessage {
                     bottom: 10%;
-                    color: white;
 
                     .message1, .message2 {
                         text-shadow: 0 1px 0 #ccc, 
@@ -1023,15 +1023,6 @@ body
                     background: rgb(2,0,36);
                     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(46,44,77,1) 47%);
                 }
-            }
-        }
-
-        // template home > index.html.twig
-        .home {
-            .doors {
-                background-image: url("/public/images/eiffelmoon.jpg");
-                background-size: cover;
-                background-repeat: no-repeat;
             }
         }
 
